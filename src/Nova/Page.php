@@ -19,7 +19,8 @@ class Page extends TemplateResource
 {
     public static $title = 'name';
     public static $model = null;
-    public static $displayInNavigation = false;
+    public static $displayInNavigation = true;
+    public static $group = config('nova-page-manager.group_name');
     public static $search = ['name', 'slug', 'template'];
 
     protected $type = 'page';
