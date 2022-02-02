@@ -37,7 +37,7 @@ class ToolServiceProvider extends ServiceProvider
     public function boot()
     {
         // Load views
-//         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-page-manager');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-page-manager');
 
         // Load migrations
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
