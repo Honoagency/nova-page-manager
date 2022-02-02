@@ -37,7 +37,7 @@ class ToolServiceProvider extends ServiceProvider
     public function boot()
     {
         // Load views
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-page-manager');
+//         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-page-manager');
 
         // Load migrations
         $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
@@ -56,10 +56,10 @@ class ToolServiceProvider extends ServiceProvider
         $pageResource = config('nova-page-manager.page_resource') ?: Page::class;
         $regionResource = config('nova-page-manager.region_resource') ?: Region::class;
 
-//         Nova::resources([
-//             $pageResource,
-//             $regionResource,
-//         ]);
+        Nova::resources([
+            $pageResource,
+            $regionResource,
+        ]);
 
         // Register commands
         if ($this->app->runningInConsole()) {
