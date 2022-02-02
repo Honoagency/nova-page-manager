@@ -56,10 +56,10 @@ class ToolServiceProvider extends ServiceProvider
         $pageResource = config('nova-page-manager.page_resource') ?: Page::class;
         $regionResource = config('nova-page-manager.region_resource') ?: Region::class;
 
-        Nova::resources([
-            $pageResource,
-            $regionResource,
-        ]);
+//         Nova::resources([
+//             $pageResource,
+//             $regionResource,
+//         ]);
 
         // Register commands
         if ($this->app->runningInConsole()) {
@@ -67,6 +67,7 @@ class ToolServiceProvider extends ServiceProvider
                 CreateTemplate::class
             ]);
         }
+       
 
         // Custom validation
         Validator::extend('alpha_dash_or_slash', function ($attribute, $value, $parameters, $validator) {
