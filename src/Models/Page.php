@@ -62,6 +62,11 @@ class Page extends TemplateModel
     {
         return $this->hasOne(NovaPageManager::getPageModel(), 'draft_parent_id', 'id');
     }
+    
+     public function child_draft()
+    {
+        return $this->hasOne(NovaPageManager::getPageModel(), 'draft_parent_id', 'id');
+    }
 
     public function getChildDraftAttribute()
     {
@@ -77,6 +82,11 @@ class Page extends TemplateModel
     }
 
     public function localeParent()
+    {
+        return $this->belongsTo(NovaPageManager::getPageModel());
+    }
+    
+    public function locale_parent()
     {
         return $this->belongsTo(NovaPageManager::getPageModel());
     }
